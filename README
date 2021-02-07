@@ -1,0 +1,19 @@
+# Download Kernel source
+ Refer to https://source.android.com/setup/build/building-kernels
+
+ Make separate kernel directory apart from Android source.
+
+  $ cd <kernel directory>
+  $ repo init -u https://github.com/android-rpi/kernel_manifest -b arpi-5.10
+  $ repo sync
+ 
+# Build Kernel
+  $ build/build.sh
+
+  Output files are under out/arpi-5.10/dist/
+    Image.gz
+    bcm2711-rpi-4-b.dtb
+    vc4-kms-v3d-pi4.dtbo
+
+# Build Android for Raspberry Pi 4
+ https://github.com/android-rpi/device_arpi_rpi4

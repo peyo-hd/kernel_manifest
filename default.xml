@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="aosp" fetch=".." review="https://android-review.googlesource.com/" />
+  <remote  name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
   <default revision="master" remote="aosp" sync-j="4" />
 
   <superproject name="kernel/superproject" remote="aosp"/>
@@ -21,4 +21,10 @@
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" />
   <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" />
   <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" />
+
+  <remote  name="arpi" fetch="."/>
+  <remove-project name="kernel/common"/>
+  <project path="common" name="kernel_arpi" revision="arpi-5.10" remote="arpi">
+      <linkfile src="build.config.arpi" dest="build.config"/>
+  </project>
 </manifest>
